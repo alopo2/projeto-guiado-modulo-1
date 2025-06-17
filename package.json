@@ -1,0 +1,26 @@
+{
+  "name": "projeto-guiado-aprofunda",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alopo2/projeto-guiado-modulo-1.git"
+  },
+  "keywords": [],
+  "author": "Ângela Carvalho",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/alopo2/projeto-guiado-modulo-1/issues"
+  },
+  "homepage": "https://github.com/alopo2/projeto-guiado-modulo-1#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
