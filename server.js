@@ -42,6 +42,37 @@ const createTask = router.post('/tasks', (req, res) => {
     res.status(201).json({ message: "Tarefa criada com sucesso!", task: newTask });
 });
 
+// PUT /tasks/:id Atualiza uma tarefa existente
+
+const updateTask = router.put('/tasks/:id', (req, res) => {
+    const taskId = parseInt(req.params.id, 2);
+    const { title, description } = req.body;
+    const taskIndex = tasks.findIndex(t => t.id === taskId);
+
+    if (taskIndex === -1) {
+        return res.status(404).json({ error: 'Tarefa não encontrada.' });
+    }
+    if (!title || !description) {
+        return res.status(400).json({ error: 'Título e descrição são obrigatórios.' });
+    }
+    tasks[taskIndex] = { id: taskId, title, description };
+    res.status(200).json({ message: "Tarefa atualizada com sucesso!", task: tasks[taskIndex] });
+
+});
+
+// DELETE /tasks/:id Deleta uma tarefa existente: 
+
+const deleteTask = router.delete('/tasks/:id', (req, res) => {
+    const taskId = parseInt(req.params.id, 10);
+    const taskIndex = tasks.findIndex(t => t.id === taskId);
+
+    if (taskIndex === -1) {
+        return res.status(404).json({ error: 'Tarefa não encontrada.' });
+    }
+    tasks.splice(taskIndex, 1);
+    res.status(200).json({ message: "Tarefa deletada com sucesso!" });
+});
+
 // Integrando as rotas ao app
 app.use(getTasks);
 app.use(getTaskById);
