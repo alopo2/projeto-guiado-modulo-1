@@ -45,7 +45,7 @@ const createTask = router.post('/tasks', (req, res) => {
 // PUT /tasks/:id Atualiza uma tarefa existente
 
 const updateTask = router.put('/tasks/:id', (req, res) => {
-    const taskId = parseInt(req.params.id, 2);
+    const taskId = parseInt(req.params.id);
     const { title, description } = req.body;
     const taskIndex = tasks.findIndex(t => t.id === taskId);
 
@@ -63,7 +63,7 @@ const updateTask = router.put('/tasks/:id', (req, res) => {
 // DELETE /tasks/:id Deleta uma tarefa existente: 
 
 const deleteTask = router.delete('/tasks/:id', (req, res) => {
-    const taskId = parseInt(req.params.id, 10);
+    const taskId = parseInt(req.params.id);
     const taskIndex = tasks.findIndex(t => t.id === taskId);
 
     if (taskIndex === -1) {
@@ -77,6 +77,8 @@ const deleteTask = router.delete('/tasks/:id', (req, res) => {
 app.use(getTasks);
 app.use(getTaskById);
 app.use(createTask);
+app.use(updateTask);
+app.use(deleteTask);
 app.use(mensagem);
 
 

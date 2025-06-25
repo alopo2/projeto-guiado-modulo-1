@@ -14,15 +14,19 @@ ministrado pela professora Jaqueline Almeida.
 
 ## Instalação
 
-Clone este repositório
+Clone este repositório:
 
-``git clone + nome-do-repositorio``
+``git clone + endereço do repositório``
 
-Instale as dependências
+Entre na pasta do projeto:
+
+``cd nome-da-pasta``
+
+Instale as dependências:
 
 ``npm install``
 
-Inicie o servidor
+Inicie o servidor:
 
 ``npm start``
 
@@ -40,9 +44,15 @@ Nessa API, temos as seguintes rotas:
 
 ### GET /tasks
 
+![retorna todas as tarefas criadas](image-1.png)
+
 ### GET /tasks/:id
 
+![retorna uma tarefa por meio de seu ID](image-2.png)
+
 ### POST /tasks
+
+![testando a rota de criação de tarefas](image.png)
 
 ```json
 {
@@ -53,17 +63,22 @@ Nessa API, temos as seguintes rotas:
 
 ### PUT /tasks/:id
 
-```json
-{
-  "title": "Tarefa Atualizada",
-  "description": "Descrição atualizada da tarefa"
-}
-```
+Tarefa de número 2 atualizada com sucesso:
+
+![atualiza a segunda tarefa com o texto correto](image-5.png)
+
+Retorno do GET /tasks após a atualização da tarefa de número 2:
+
+![retorno da rota GET tasks após a atualização da tarefa número 2](image-6.png)
 
 ### DELETE /tasks/:id
 
-```json
-{
-  "message": "Tarefa deletada com sucesso"
-}
-```
+Tarefa de número 2 deletada com sucesso:
+
+![deleta a tarefa de número 2](image-3.png)
+
+Retorno do GET /tasks após a deleção da tarefa de número 2:
+
+![rota GET com a ausência da tarefa numero 2 que foi deletada](image-4.png)
+
+Projeto desenvolvido com muito carinho e dedicação, espero que gostem! 😊
