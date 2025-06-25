@@ -40,7 +40,7 @@ Nessa API, temos as seguintes rotas:
 - **PUT /tasks/:id**: Atualiza uma tarefa específica pelo ID.
 - **DELETE /tasks/:id**: Deleta uma tarefa específica pelo ID.
 
-## Testes utilizando o Thunder Client: 
+## Testes utilizando o Thunder Client
 
 ### GET /tasks
 
